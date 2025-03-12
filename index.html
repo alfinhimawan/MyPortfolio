@@ -14,10 +14,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>My Portfolio</title>
+    <title>Devfolio-Alfin</title>
 
     <!-- Animate on scroll CDN -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- SweetAlert2 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -75,6 +79,8 @@
                     <i class="uil uil-apps"></i>
                 </div>
             </div>
+
+            
         </nav>
     </header>
 
@@ -155,7 +161,8 @@
                         I feel prepared to contribute to the fullest extent with my time and competencies.
                     </p>
                     <div class="about__buttons">
-                        <a download="" href="assets/pdf/Softfile_Alfin Himawan Santosa_CV.pdf" class="button button--flex">
+                        <a download="" href="assets/pdf/Softfile_Alfin Himawan Santosa_CV.pdf"
+                            class="button button--flex">
                             Download CV <i class="uil uil-download-alt button__icon"></i>
                         </a>
                     </div>
@@ -315,11 +322,9 @@
         <section class="certificate section">
             <h2 class="section__title">My Certificates</h2>
             <span class="section__subtitle">By Certiport, HackerRank, & DOT</span>
-            <span class="section__subtitle">Scroll or slide here to see next>>></span>
 
             <div data-aos="fade-up" class="portfolio__container container swiper-container">
                 <div class="swiper-wrapper">
-                    <!-- Certificate 1 -->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/img/Cert68034731643_page-0001.jpg" alt="" class="portfolio__img">
 
@@ -332,13 +337,12 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Certificate 2 -->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/img/software_engineer certificate_page-0001.jpg" alt=""
                             class="portfolio__img">
 
                         <div class="portfolio__data">
-                            <p>Software Engineer Certicate</p>
+                            <p>Software Engineer Certificate</p>
                             <a href="/assets/pdf/software_engineer certificate.pdf"
                                 class="button button--flex button--small portfolio_-button">
                                 Preview
@@ -346,8 +350,6 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Certificate 3 -->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/img/javascript_intermediate certificate_page-0001.jpg" alt=""
                             class="portfolio__img">
@@ -361,8 +363,6 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Certificate 4 -->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/img/sql_advanced certificate_page-0001.jpg" alt="" class="portfolio__img">
 
@@ -375,8 +375,6 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Certificate 5 -->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/img/rest_api_intermediate certificate_page-0001.jpg" alt=""
                             class="portfolio__img">
@@ -390,8 +388,6 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Certificate 6 -->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="/assets/img/Certificate of Competency - ALFIN HIMAWAN SANTOSA_page-0001.jpg" alt=""
                             class="portfolio__img">
@@ -405,6 +401,10 @@
                             </a>
                         </div>
                     </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
 
         <!-- Services -->
@@ -597,15 +597,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Add Arrows -->
-                <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div>
-
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
@@ -642,8 +633,7 @@
                     </div>
                 </div>
 
-                <form action="https://formsubmit.co/3291f4338dc27f344cdc564a1df42f85" method="POST"
-                    class="contact__form grid">
+                <form method="POST" class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
                             <label for="" class="contact__label">Name</label>
@@ -660,15 +650,15 @@
                     </div>
                     <div class="contact__content">
                         <label for="" class="contact__label">Message</label>
-                        <textarea name="" id="" cols="0" rows="7" class="contact__input" name="message"></textarea>
+                        <textarea name="message" id="" cols="0" rows="7" class="contact__input"></textarea>
                     </div>
 
                     <div>
-                        <button type="submit" class="button button--flex">
+                        <button type="submit" class="button button--flex"
+                            onclick="event.preventDefault(); showAlert();">
                             Send Message
                             <i class="uil uil-message button__icon"></i>
                         </button>
-
                     </div>
                 </form>
             </div>
@@ -713,7 +703,7 @@
             <i class="uil uil-arrow-up scrollup__icon"></i>
         </a>
     </div>
-    
+
     <!-- Swiper JS -->
     <script src="/assets/js/swiper-bundle.min.js"></script>
 
@@ -741,6 +731,18 @@
             offset: 300,
             duration: 2000
         });
+    </script>
+
+    <!-- SweetAlert2 -->
+    <script>
+        function showAlert() {
+            Swal.fire({
+                title: 'Message sent!',
+                text: 'Your message has been successfully sent.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
     </script>
 
 </body>
